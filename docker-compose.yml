@@ -1,0 +1,10 @@
+services:
+  arbiever-alethio:
+    build: .
+    image: arbiever-lite-explorer:latest
+    container_name: arbiever-alethio
+    restart: unless-stopped
+    ports:
+      - "4002:80"
+    environment:
+      APP_NODE_URL: "https://rpc-arbi.ever-chain.xyz"
