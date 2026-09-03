@@ -1,0 +1,22 @@
+[
+ {
+  "Description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+  "StartLine": 1,
+  "EndLine": 2,
+  "StartColumn": 13,
+  "EndColumn": 1,
+  "Match": "API_HOST=arbiever2.ever-chain.xyz",
+  "Secret": "arbiever2.ever-chain.xyz",
+  "File": "blockscout/frontend.env",
+  "SymlinkFile": "",
+  "Commit": "9203a9ff2ea843cc1ec4f599ed667ca9243fb714",
+  "Entropy": 3.7201755,
+  "Author": "ArbiEver Bot",
+  "Email": "claude@arbiever.local",
+  "Date": "2026-05-23T09:03:16Z",
+  "Message": "Add Blockscout full-stack explorer (https://arbiever2.ever-chain.xyz)\n\n5-container minimal setup (redis + postgres + backend + frontend + nginx)\nconfigured for ArbiEver L2:\n- Backend: blockscout/blockscout:6.10.1, indexes from http://host.docker.internal:8449\n- Frontend: ghcr.io/blockscout/frontend:v1.36.4\n- ArbiEver brand env vars (NETWORK=ArbiEver, COIN=ETE, custom logo)\n- nginx proxy on :4005 (OCI stunnel → this server)\n- 4-core / 12GB friendly: visualizer/stats/sig-provider/user-ops-indexer disabled\n\nVerification:\n- External HTTPS: HTTP/2 200 from https://arbiever2.ever-chain.xyz\n- API /api/v2/stats: live (total_blocks indexing)\n- arbiicon512.png served at /static/arbiicon.png\n- L2 blocks 0~11 indexed + 22 transactions",
+  "Tags": [],
+  "RuleID": "generic-api-key",
+  "Fingerprint": "9203a9ff2ea843cc1ec4f599ed667ca9243fb714:blockscout/frontend.env:generic-api-key:1"
+ }
+]
